@@ -61,3 +61,27 @@ export const startSetExpense = () => {
     }
 };
 
+export const startRemoveExpense  = ({ id } = {}) => {
+  return (dispatch) => {
+      return database.ref(`expenses/${id}`).remove().then((ref) => {
+          dispatch(removeExpense({ id }));
+      })
+  }
+};
+
+export const startEditExpense  = (id, updates) => {
+  return (dispatch) => {
+      return database.ref(`expenses/${id}`).update(updates).then(() => {
+          dispatch(editExpense(id , updates));
+      })
+  }
+};
+
+
+// export const startEditExpense  = (id, updates) => {
+//   return (dispatch) => {
+//       database.ref().child(`expenses/${id}`).set(updates).then((ref) => {
+//           dispatch(editExpense(id , updates));
+//       })
+//   }
+// };
