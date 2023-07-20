@@ -1,7 +1,3 @@
-# expensify-app
-
-Here is a draft README.md for an Expensify app repository:
-
 # Expensify App
 
 This is a web application to manage expenses built with React and Redux.
